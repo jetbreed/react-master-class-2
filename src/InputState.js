@@ -6,21 +6,21 @@ export default function InputState(){
 
     const [answer, setAnswer] = useState('');
     const [error, setError] = useState(null);
-    const [status, setStatus] = useState('typing');
+    const [status, setStatus] = useState('typing . . .');
 
 
-    if(status === 'success'){
+    if(status === 'success . . .'){
         return <h1>That's Right!!!</h1>
     }
 
     async function handleSubmit(e){
         e.preventDefault();
-        setStatus('submitting');
+        setStatus('submitting . . .');
         try{
             await submitForm(answer);
-            setStatus('success');
+            setStatus('success . . .');
         } catch (err){
-            setStatus('typing');
+            setStatus('typing . . .');
             setError(err);
         }
     }
@@ -46,8 +46,8 @@ export default function InputState(){
 
                 <button style={{width:"150%"}} className="btn-lg btn-danger"
                  disabled={answer.length === 0 || 
-                    status === 'submitting'}>
-                    SUBMIT NOW!
+                    status === 'submitting . . .'}>
+                    {' '+status.toUpperCase()}
                 </button >
                 {error !==null &&
                 <p className="Error">
@@ -66,7 +66,9 @@ export default function InputState(){
             setTimeout(() => {
                 let shouldError = answer.toLowerCase() !== 'chris';
                 if(shouldError){
-                    reject(new Error('Good guess, but  wrong answer! Try again!'));
+                    // reject(new Error('Good guess, but  wrong answer! Try again!'));
+                    reject(new Error());
+                    alert('Good guess, but  wrong answer! Try again!');
                 }else{
                     resolve();
                 }

@@ -16,9 +16,17 @@ function MultipleInputFieldForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Enter your name:
+    <form style={{
+      background:'blue',
+      height:"1000px",
+      color:"#fff",
+      fontWeight:"700",
+      paddingTop:"200px",
+    }} onSubmit={handleSubmit}>
+      <label>
+        
       <input 
+        placeholder='Enter your name:'
         type="text" 
         name="username" 
         value={inputs.username || ""} 
@@ -27,8 +35,9 @@ function MultipleInputFieldForm() {
       </label>
       <br></br>
       <br></br>
-      <label>Enter your age:
-        <input 
+      <label>
+        
+        <input placeholder='Enter your age:'
           type="number" 
           name="age" 
           value={inputs.age || ""} 
@@ -37,7 +46,12 @@ function MultipleInputFieldForm() {
         </label>
         <br></br>
         <br></br>
-        <input type="submit" />
+        <div style={{
+          display:"flex",
+          justifyContent:"center",
+        }}>
+          <input type="submit" />
+        </div>
     </form>
   )
 }

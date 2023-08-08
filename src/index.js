@@ -37,9 +37,9 @@ root.render(
         {/* <MyForm_Normal/> */}
         {/* <Form1_useState/> */}
         {/* <Submitting_Form/>     */}
-        <InputState/>
         {/* <Form_Submission/> */}
-        {/* <MultipleInputFieldForm/> */}
+        {/* <InputState/> */}
+        <MultipleInputFieldForm/>
         {/*<StateComponentMemory/>*/}
         {/*<SharingStateBtwComponents_Ex1/>*/}
         {/*<SharingStateBtwComponents_Ex2/>*/}
